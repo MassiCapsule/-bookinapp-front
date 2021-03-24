@@ -27,7 +27,7 @@ function CreateAccount (props) {
     if (!checkEmailFormat(userEmail)) {
         setUserMessage('Veuillez saisir un email valide.');
     } else {
-      const response = await fetch('http://192.168.0.42:3000/sign-up', {
+      const response = await fetch('https://whispering-eyrie-80583.herokuapp.com/sign-up', {
         method: 'POST',
         headers: {'Content-Type':'application/x-www-form-urlencoded'},
         body: `libraryName=${userLibraryName}&email=${userEmail}&password=${userPassword}`

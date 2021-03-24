@@ -25,7 +25,7 @@ useEffect(() => {
     /* Récupération de la wishlist dans la BDD */
     if (token!==null) {
       var CheckWishList = async () => { 
-        const data = await fetch(`http://192.168.0.42:3000/getwishlist`, {
+        const data = await fetch(`https://whispering-eyrie-80583.herokuapp.com/getwishlist`, {
           method: 'POST',
           headers: {'Content-Type': 'application/x-www-form-urlencoded' },
           body: `token=${token}`

@@ -17,7 +17,7 @@ function Login (props) {
 
   /* On interroge le back sur la route sign-in avec l'email et le mot de passe */
   const handleSignInSubmit = async () => {
-    const data = await fetch('http://192.168.0.42:3000/sign-in', {
+    const data = await fetch('https://whispering-eyrie-80583.herokuapp.com/sign-in', {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: `signInEmail=${signInEmail}&signInPassword=${signInPassword}`

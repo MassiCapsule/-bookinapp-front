@@ -64,7 +64,7 @@ function BookScreen(props) {
         /* Checker si le livre est dans la wishList */
         if (token!==null) {
           var CheckWishList = async () => { 
-            const data = await fetch(`http://192.168.0.42:3000/checkwishlist`, {
+            const data = await fetch(`https://whispering-eyrie-80583.herokuapp.com/checkwishlist`, {
             method: 'POST',
             headers: {'Content-Type': 'application/x-www-form-urlencoded' },
             body: `token=${token}&bookid=${props.googleId}`
@@ -99,7 +99,7 @@ const handleClickWLAdd = async () => {
   {
   if (token!==null) {
     var addWL = async () => {
-      const data = await fetch('http://192.168.0.42:3000/addtowishlist', {
+      const data = await fetch('https://whispering-eyrie-80583.herokuapp.com/addtowishlist', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({"title":dataBook.title, "cover":dataBook.imageLinks.thumbnail, "bookid":props.googleId, "token":token})
@@ -135,7 +135,7 @@ const handleClickWLDelete = async () => {
     { 
       if (token!==null) { 
         var deleteWL = async () => {
-          const dataDelete = await fetch(`http://192.168.0.42:3000/wishlist/delete/${token}/${props.googleId}`, {
+          const dataDelete = await fetch(`https://whispering-eyrie-80583.herokuapp.com/wishlist/delete/${token}/${props.googleId}`, {
           method: 'DELETE',
           });
 
